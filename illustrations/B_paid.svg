@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="1200" height="880"><defs>
+<linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f8fa"/><stop offset=".35" stop-color="#c3c8cf"/><stop offset=".6" stop-color="#eef0f3"/><stop offset="1" stop-color="#9ba1ab"/></linearGradient>
+<linearGradient id="silverDark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9aa0a9"/><stop offset="1" stop-color="#6f7681"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7db6ff"/><stop offset=".35" stop-color="#1a63ff"/><stop offset=".7" stop-color="#0a3fd0"/><stop offset="1" stop-color="#4c93ff"/></linearGradient>
+<linearGradient id="blueDark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a3fd0"/><stop offset="1" stop-color="#061f7a"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#e9edf2"/><stop offset="1" stop-color="#cdd3db"/></linearGradient>
+<linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8c93a0"/><stop offset="1" stop-color="#c4c9d1"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#3b86ff" stop-opacity=".35"/><stop offset="1" stop-color="#3b86ff" stop-opacity="0"/></radialGradient>
+<filter id="sh" filterUnits="userSpaceOnUse" x="-150" y="-150" width="700" height="700"><feGaussianBlur in="SourceAlpha" stdDeviation="9"/><feOffset dy="14"/><feComponentTransfer><feFuncA type="linear" slope=".28"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-50%" y="-300%" width="200%" height="700%"><feGaussianBlur stdDeviation="14"/></filter>
+</defs><ellipse cx="300" cy="400" rx="190" ry="22" fill="#0a3fd0" opacity=".12" filter="url(#soft)"/><g transform="translate(150 60) rotate(-6) scale(1)" filter="url(#sh)">
+<rect x="6" y="10" width="224" height="300" rx="20" fill="url(#silverDark)"/>
+<rect x="3" y="5" width="224" height="300" rx="20" fill="#a9afb8"/>
+<rect x="0" y="0" width="224" height="300" rx="20" fill="url(#paper)"/>
+<rect x="0" y="0" width="224" height="300" rx="20" fill="none" stroke="#fff" stroke-width="2" opacity=".9"/>
+<text x="28" y="48" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="20" letter-spacing="1.5" fill="#5b6472">INVOICE</text>
+<text x="28" y="70" font-family="Inter,Arial,sans-serif" font-size="11" fill="#8a919c">#PAY-000001</text>
+<rect x="28" y="84" width="168" height="2" rx="1" fill="#c3c8cf"/>
+<rect x="28" y="118" width="92" height="9" rx="4.5" fill="url(#bar)"/><rect x="162" y="118" width="34" height="9" rx="4.5" fill="url(#bar)" opacity=".8"/><rect x="28" y="148" width="70" height="9" rx="4.5" fill="url(#bar)"/><rect x="162" y="148" width="34" height="9" rx="4.5" fill="url(#bar)" opacity=".8"/><rect x="28" y="178" width="106" height="9" rx="4.5" fill="url(#bar)"/><rect x="162" y="178" width="34" height="9" rx="4.5" fill="url(#bar)" opacity=".8"/>
+<rect x="28" y="224" width="168" height="2" rx="1" fill="#c3c8cf"/>
+<rect x="28" y="244" width="60" height="12" rx="6" fill="url(#blue)"/>
+<rect x="96" y="244" width="40" height="12" rx="6" fill="url(#blue)" opacity=".5"/>
+<g transform="translate(196 252)"><circle r="26" fill="url(#blue)"/><circle r="26" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><path d="M-11 0 L-3 9 L12 -9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path d="M0 0 H224 V60 Q150 40 110 14 Q60 -4 0 0Z" fill="#fff" opacity=".35"/>
+</g><g transform="translate(430 270) rotate(-16)" filter="url(#sh)"><ellipse cx="9.0" cy="5.0" rx="41.0" ry="50" fill="url(#silverDark)"/><ellipse cx="8.1" cy="4.5" rx="41.0" ry="50" fill="url(#silverDark)"/><ellipse cx="7.2" cy="4.0" rx="41.0" ry="50" fill="url(#silverDark)"/><ellipse cx="6.3" cy="3.5" rx="41.0" ry="50" fill="url(#silverDark)"/><ellipse cx="5.4" cy="3.0" rx="41.0" ry="50" fill="url(#silverDark)"/><ellipse cx="4.5" cy="2.5" rx="41.0" ry="50" fill="url(#silverDark)"/><ellipse cx="3.6" cy="2.0" rx="41.0" ry="50" fill="url(#silverDark)"/><ellipse cx="2.7" cy="1.5" rx="41.0" ry="50" fill="url(#silverDark)"/><ellipse cx="1.8" cy="1.0" rx="41.0" ry="50" fill="url(#silverDark)"/><ellipse cx="0.9" cy="0.5" rx="41.0" ry="50" fill="url(#silverDark)"/>
+<ellipse rx="41.0" ry="50" fill="url(#silver)"/>
+<ellipse rx="36.0" ry="45" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5"/>
+<text y="15.0" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="47.5" fill="#f3f4f6" stroke="#000" stroke-opacity=".12" stroke-width="1">$</text>
+</g><g transform="translate(500 170) rotate(-16)" filter="url(#sh)"><ellipse cx="6.3" cy="3.5" rx="26.24" ry="32" fill="url(#blueDark)"/><ellipse cx="5.4" cy="3.0" rx="26.24" ry="32" fill="url(#blueDark)"/><ellipse cx="4.5" cy="2.5" rx="26.24" ry="32" fill="url(#blueDark)"/><ellipse cx="3.6" cy="2.0" rx="26.24" ry="32" fill="url(#blueDark)"/><ellipse cx="2.7" cy="1.5" rx="26.24" ry="32" fill="url(#blueDark)"/><ellipse cx="1.8" cy="1.0" rx="26.24" ry="32" fill="url(#blueDark)"/><ellipse cx="0.9" cy="0.5" rx="26.24" ry="32" fill="url(#blueDark)"/>
+<ellipse rx="26.24" ry="32" fill="url(#blue)"/>
+<ellipse rx="21.24" ry="27" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5"/>
+<text y="9.6" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="30.4" fill="#fff" stroke="#000" stroke-opacity=".12" stroke-width="1">$</text>
+</g><g transform="translate(40 150) rotate(0)" filter="url(#sh)"><rect width="80" height="32" rx="16" fill="#fff"/><rect width="80" height="32" rx="16" fill="none" stroke="#c9d9ff" stroke-width="1.5"/><circle cx="16" cy="16" r="4.5" fill="#5b6472"/><text x="28" y="21.5" font-family="Inter,Arial,sans-serif" font-weight="600" font-size="14" fill="#5b6472">Sent</text></g><g transform="translate(395 70) rotate(6)" filter="url(#sh)"><rect width="80" height="32" rx="16" fill="#fff"/><rect width="80" height="32" rx="16" fill="none" stroke="#c9d9ff" stroke-width="1.5"/><circle cx="16" cy="16" r="4.5" fill="#0a8a4a"/><text x="28" y="21.5" font-family="Inter,Arial,sans-serif" font-weight="600" font-size="14" fill="#0a8a4a">Paid</text></g></svg>
