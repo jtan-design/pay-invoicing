@@ -1,0 +1,81 @@
+<!doctype html><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,"Helvetica Neue",Arial,sans-serif;background:#e9eef6;color:#1f2f3d;padding:32px;width:1960px}
+.sheet{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel{background:#f6f8fb;border-radius:20px;padding:24px 28px 30px;box-shadow:0 6px 24px rgba(15,40,90,.1)}
+.tag{font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:#0b57ff;margin-bottom:6px}
+.tag.alt{color:#6b7a8a}
+.note{font-size:13.5px;color:#6b7a8a;line-height:1.5;margin-bottom:18px}
+h3{font-size:16px;font-weight:700;margin:0 0 12px}
+.row{display:flex;gap:20px;align-items:flex-start}
+.table{flex:1;background:#fff;border-radius:6px;font-size:13.5px}
+.tr{display:grid;grid-template-columns:1.6fr .7fr .8fr .8fr .8fr 24px;padding:14px 16px;border-bottom:1px solid #e6ebf2;align-items:center}
+.th{font-weight:700}
+.add{color:#0b57ff;font-weight:700;font-size:14px;margin:14px 8px}
+.sum{width:330px;background:#fff;border-radius:6px;overflow:hidden}
+.sum .h{padding:14px 16px;font-size:15px;display:flex;justify-content:space-between}
+.sum .l{display:flex;justify-content:space-between;padding:12px 24px;font-size:13.5px;color:#43566b}
+.sum .l b{color:#1f2f3d}
+.sum .tot{display:flex;justify-content:space-between;padding:14px 16px;border-top:1px solid #e6ebf2;font-size:15px}
+.err .tot{background:#fff4f4;border-top:1px solid #f1b8b8;color:#b42318}
+.msg{display:flex;gap:8px;align-items:flex-start;padding:0 16px 14px;background:#fff4f4;color:#b42318;font-size:13.5px;line-height:1.45}
+.msg svg,.alert svg{width:18px;height:18px;flex:none;margin-top:1px}
+.alert{display:flex;gap:10px;background:#fff4f4;border:1px solid #f1b8b8;border-radius:10px;padding:12px 14px;color:#7a1b12;font-size:14px;margin-bottom:14px;line-height:1.45}
+.alert b{display:block;color:#b42318}
+.footer{display:flex;justify-content:flex-end;gap:12px;margin-top:22px;align-items:center}
+.btn{font-weight:700;font-size:15px;padding:10px 18px;border-radius:6px}
+.sec{border:1.5px solid #0b57ff;color:#0b57ff;background:#fff}
+.pri{background:#0b57ff;color:#fff}
+.click{font-size:12px;color:#6b7a8a;margin-right:auto}
+.steps{display:flex;gap:10px;margin-top:22px}
+.step{flex:1;background:#fff;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.45;color:#43566b;border:1px solid #e3e9f1}
+.step b{display:block;color:#1f2f3d;margin-bottom:4px}
+</style><body><div class="sheet">
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="err" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6M12 16.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol></defs></svg>
+
+<div class="panel"><div class="tag">Recommended · Error at the total</div>
+<div class="note">The rule is about the total, not a line item, so the error sits on the total. Continue stays enabled. Clicking it shows the error. The error clears as soon as the total reaches $1.</div>
+<h3>Invoice details</h3>
+<div class="row">
+ <div><div class="table">
+  <div class="tr th"><div>Items</div><div>Quantity</div><div>Price</div><div>Include GST</div><div>Amount</div><div></div></div>
+  <div class="tr"><div>Carrots</div><div>1</div><div>$0.10</div><div>☐</div><div>$0.10</div><div>🗑</div></div>
+  <div class="tr"><div>Potatoes</div><div>1</div><div>$0.10</div><div>☐</div><div>$0.10</div><div>🗑</div></div>
+  <div class="tr"><div>Taro</div><div>1</div><div>$0.10</div><div>☐</div><div>$0.10</div><div>🗑</div></div>
+ </div><div class="add">+ Add item</div></div>
+ <div class="sum err">
+  <div class="h">Your invoice amount <span>⌃</span></div>
+  <div class="l">Subtotal <b>$0.30</b></div>
+  <div class="l">GST (10%) <b>$0.00</b></div>
+  <div class="tot"><span>Amount to be paid</span><b>$0.30</b></div>
+  <div class="msg"><svg><use href="#err"/></svg><span>Invoice total must be at least $1. Add an item or update a price.</span></div>
+ </div>
+</div>
+<div class="footer"><span class="click">After clicking Continue</span><span class="btn sec">Cancel</span><span class="btn pri">Continue</span></div>
+<div class="steps">
+ <div class="step"><b>1 · While editing</b>No error. Totals update as normal.</div>
+ <div class="step"><b>2 · Clicks Continue under $1</b>Error shows on the total. Focus moves to it. User stays on step 1.</div>
+ <div class="step"><b>3 · Total reaches $1</b>Error clears straight away. Continue works.</div>
+</div></div>
+
+<div class="panel"><div class="tag alt">Alternative · Alert above the table</div>
+<div class="note">An error alert above Invoice details, plus the red total. It's easier to spot on long invoices, but it's heavier, and it sits away from the number that's wrong. Use it only if the summary card can scroll out of view.</div>
+<h3>Invoice details</h3>
+<div class="alert"><svg><use href="#err"/></svg><div><b>Invoice total must be at least $1</b>Add an item or update a price to continue.</div></div>
+<div class="row">
+ <div><div class="table">
+  <div class="tr th"><div>Items</div><div>Quantity</div><div>Price</div><div>Include GST</div><div>Amount</div><div></div></div>
+  <div class="tr"><div>Carrots</div><div>1</div><div>$0.10</div><div>☐</div><div>$0.10</div><div>🗑</div></div>
+  <div class="tr"><div>Potatoes</div><div>1</div><div>$0.10</div><div>☐</div><div>$0.10</div><div>🗑</div></div>
+  <div class="tr"><div>Taro</div><div>1</div><div>$0.10</div><div>☐</div><div>$0.10</div><div>🗑</div></div>
+ </div><div class="add">+ Add item</div></div>
+ <div class="sum err">
+  <div class="h">Your invoice amount <span>⌃</span></div>
+  <div class="l">Subtotal <b>$0.30</b></div>
+  <div class="l">GST (10%) <b>$0.00</b></div>
+  <div class="tot"><span>Amount to be paid</span><b>$0.30</b></div>
+ </div>
+</div>
+<div class="footer"><span class="click">After clicking Continue</span><span class="btn sec">Cancel</span><span class="btn pri">Continue</span></div>
+</div>
+</div></body>
