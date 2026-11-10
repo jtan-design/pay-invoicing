@@ -1,0 +1,72 @@
+<!doctype html><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,"Helvetica Neue",Arial,sans-serif;background:#e9eef6;color:#1f2f3d;padding:32px;width:1960px}
+.sheet{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.panel{background:#fff;border-radius:20px;padding:24px 28px 30px;box-shadow:0 6px 24px rgba(15,40,90,.1)}
+.tag{font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:#0b57ff;margin-bottom:6px}
+.tag.cur{color:#8a6a1f}
+.note{font-size:13px;color:#6b7a8a;line-height:1.45;margin-bottom:18px;min-height:38px}
+.modal{border:1px solid #e3e9f1;border-radius:16px;padding:20px 22px;background:#fff}
+.sum{display:grid;grid-template-columns:150px 1fr;font-size:14px}
+.sum div{padding:11px 0;border-bottom:1px solid #e6ebf2}
+.sum .k{color:#6b7a8a;font-size:13px}
+.h{font-weight:700;font-size:14px;margin:16px 0 10px}
+.helper-sec{font-size:13.5px;color:#43566b;line-height:1.5;margin:-4px 0 12px;display:flex;gap:8px}
+.cb{border:1.5px solid #8bb0ff;border-radius:14px;padding:14px 16px;margin-bottom:10px;display:flex;justify-content:space-between;gap:12px}
+.cb .t{font-size:14.5px}
+.cb a{color:#0b57ff;font-size:14.5px;display:inline-flex;gap:6px;align-items:center;margin-top:3px}
+.box{width:22px;height:22px;border-radius:5px;background:#0b57ff;display:grid;place-items:center;flex:none}
+.box svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.foot{font-size:11px;color:#6b7a8a;margin:6px 0 0}
+.in{border-top:1px solid #dbe6fb;margin-top:10px;padding-top:9px;font-size:13px;color:#43566b;display:flex;gap:8px;align-items:flex-start;line-height:1.45}
+.ico{width:16px;height:16px;flex:none;margin-top:1px}
+.ico circle,.ico path{stroke:#0b57ff;fill:none;stroke-width:2;stroke-linecap:round}
+.why{color:#0b57ff;font-size:13px;margin-left:8px;display:inline-flex;gap:4px;align-items:center;border-bottom:1px dashed #0b57ff;cursor:default}
+.pop{position:relative;margin:8px 0 0 0;background:#1f2f3d;color:#fff;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.45;max-width:330px}
+.pop:before{content:"";position:absolute;top:-6px;left:92px;border:6px solid transparent;border-bottom-color:#1f2f3d;border-top:0}
+b{font-weight:700}
+.partner{display:flex;align-items:center;gap:8px}
+.pill{font-size:11px;font-weight:700;background:#e8f0ff;color:#0b57ff;border-radius:999px;padding:2px 8px}
+</style><body><div class="sheet">
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="chk" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol></defs></svg>
+
+<!-- CURRENT -->
+<div class="panel"><div class="tag cur">Current</div><div class="note">11px footnote below both checkboxes. Easy to miss, and it isn't next to the Adyen checkbox it explains.</div>
+<div class="modal"><div class="sum"><div class="k">Payment methods</div><div>Card</div><div class="k">Settlement account</div><div>ANZ 012-234 •••• 9876</div><div class="k" style="border:0">Package</div><div style="border:0">Plus package · 2 points per $1 received</div></div>
+<div class="h">Terms</div>
+<div class="cb"><div><div class="t">I agree to the Adyen terms</div><a>Adyen's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div>
+<div class="cb"><div><div class="t">I agree to the pay.com.au terms</div><a>pay.com.au's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div>
+<div class="foot"><b>pay.com.au</b> partners with <b>Adyen</b> (ACN 617 647 220)</div></div></div>
+
+<!-- A -->
+<div class="panel"><div class="tag">Option A · Inside the Adyen card</div><div class="note">Helper sits in the Adyen terms card, under its link, so it answers "who is Adyen?" at the moment of agreeing. Recommended.</div>
+<div class="modal"><div class="sum"><div class="k">Payment methods</div><div>Card</div><div class="k">Settlement account</div><div>ANZ 012-234 •••• 9876</div><div class="k" style="border:0">Package</div><div style="border:0">Plus package · 2 points per $1 received</div></div>
+<div class="h">Terms</div>
+<div class="cb" style="display:block"><div style="display:flex;justify-content:space-between;gap:12px"><div><div class="t">I agree to the Adyen terms</div><a>Adyen's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div>
+<div class="in"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg><div>Adyen is our card payments partner. <b>ACN 617 647 220</b></div></div></div>
+<div class="cb"><div><div class="t">I agree to the pay.com.au terms</div><a>pay.com.au's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div></div></div>
+
+<!-- B -->
+<div class="panel"><div class="tag">Option B · Intro under "Terms"</div><div class="note">One sentence under the Terms heading that frames both agreements before the user reads them. Reads well, but sits above, not on, the Adyen row.</div>
+<div class="modal"><div class="sum"><div class="k">Payment methods</div><div>Card</div><div class="k">Settlement account</div><div>ANZ 012-234 •••• 9876</div><div class="k" style="border:0">Package</div><div style="border:0">Plus package · 2 points per $1 received</div></div>
+<div class="h">Terms</div>
+<div class="helper-sec"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg><div>pay.com.au partners with <b>Adyen</b> (ACN 617 647 220) to process card payments, so you agree to both sets of terms.</div></div>
+<div class="cb"><div><div class="t">I agree to the Adyen terms</div><a>Adyen's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div>
+<div class="cb"><div><div class="t">I agree to the pay.com.au terms</div><a>pay.com.au's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div></div></div>
+
+<!-- C -->
+<div class="panel"><div class="tag">Option C · Row in the summary</div><div class="note">Treat it as a fact about the setup: a "Card partner" row beside Payment methods and Settlement account. Scannable, no extra sentence.</div>
+<div class="modal"><div class="sum"><div class="k">Payment methods</div><div>Card</div><div class="k">Card partner</div><div class="partner">Adyen <span class="pill">ACN 617 647 220</span></div><div class="k">Settlement account</div><div>ANZ 012-234 •••• 9876</div><div class="k" style="border:0">Package</div><div style="border:0">Plus package · 2 points per $1 received</div></div>
+<div class="h">Terms</div>
+<div class="cb"><div><div class="t">I agree to the Adyen terms</div><a>Adyen's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div>
+<div class="cb"><div><div class="t">I agree to the pay.com.au terms</div><a>pay.com.au's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div></div></div>
+
+<!-- D -->
+<div class="panel"><div class="tag">Option D · "Why Adyen?" popover</div><div class="note">Keeps the modal clean. A small "Why Adyen?" link opens the explanation on hover or tap. Least visible, and needs an accessible tooltip or popover.</div>
+<div class="modal"><div class="sum"><div class="k">Payment methods</div><div>Card</div><div class="k">Settlement account</div><div>ANZ 012-234 •••• 9876</div><div class="k" style="border:0">Package</div><div style="border:0">Plus package · 2 points per $1 received</div></div>
+<div class="h">Terms</div>
+<div class="cb"><div><div class="t">I agree to the Adyen terms <span class="why"><svg class="ico" style="width:13px;height:13px;margin:0" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg>Why Adyen?</span></div>
+<div class="pop">Adyen is our card payments partner. <b>ACN 617 647 220</b></div><a style="margin-top:10px">Adyen's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div>
+<div class="cb"><div><div class="t">I agree to the pay.com.au terms</div><a>pay.com.au's Term and Conditions ↗</a></div><div class="box"><svg><use href="#chk"/></svg></div></div></div></div>
+
+</div></body>
