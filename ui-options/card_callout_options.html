@@ -1,0 +1,73 @@
+<!doctype html><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,"Helvetica Neue",Arial,sans-serif;background:#e9eef6;color:#283E48;padding:32px;width:1560px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:#F7F9FB;border-radius:20px;padding:22px 26px 28px;box-shadow:0 6px 24px rgba(15,40,90,.1)}
+.tag{font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:#005AFF;margin-bottom:6px}.tag.cur{color:#8a6a1f}
+.note{font-size:13.5px;color:#526973;line-height:1.5;margin-bottom:20px;min-height:60px}
+.wrap{max-width:600px;margin:0 auto;padding-top:14px}
+.c{background:#fff;border-radius:16px;padding:22px;position:relative}
+.c.grey{background:linear-gradient(135deg,#eef1f6,#d8dee8)}
+.hd{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.ic{width:38px;height:38px;border-radius:50%;background:#CCDEFF;display:grid;place-items:center;flex:none}
+.ic svg{width:20px;height:20px;stroke:#005AFF;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic.hot{background:#005AFF}.ic.hot svg{stroke:#fff}
+.chip{font-size:12px;font-weight:600;border-radius:999px;padding:2px 9px;border:1px solid}
+.off{color:#526973;border-color:#cfd6dd;background:#f3f5f7;font-weight:500}
+.new{color:#005AFF;border-color:#99BDFF;background:#EBF2FF}
+.bonus{color:#00838F;border-color:#7fd6df;background:#E9F9FB}
+.brands{margin-left:auto;display:flex;gap:6px;align-items:center}
+.vis{font-weight:900;font-style:italic;color:#1a1f71;font-size:16px}
+.mc{display:inline-block;position:relative;width:26px;height:16px}.mc:before,.mc:after{content:"";position:absolute;top:0;width:16px;height:16px;border-radius:50%}.mc:before{left:0;background:#EB001B}.mc:after{left:10px;background:#F79E1B;opacity:.9}
+.body{font-size:14.5px;line-height:1.55;color:#283E48;margin:18px 0 20px}
+.body b{color:#283E48}
+.muted{color:#526973}
+.btn{display:inline-flex;gap:8px;align-items:center;font-weight:700;font-size:14px;border-radius:8px;padding:9px 14px;white-space:nowrap}
+.sec{border:1.5px solid #005AFF;color:#005AFF;background:#fff}
+.sec.dim{border-color:#99a8b8;color:#526973}
+/* wraparound banner */
+.wb{border-radius:16px;background:linear-gradient(103deg,#005AFF,#3B7BFF);padding:0 0 0;overflow:hidden}
+.wb .strip{color:#fff;font-size:13.5px;font-weight:600;padding:9px 18px;display:flex;align-items:center;gap:8px}
+.wb .c{border-radius:14px;margin:0 2px 2px}
+/* tab */
+.tab{position:absolute;top:-14px;left:20px;background:#005AFF;color:#fff;font-size:12px;font-weight:700;border-radius:8px 8px 8px 0;padding:4px 10px;box-shadow:0 4px 10px rgba(0,90,255,.25)}
+.ring{box-shadow:0 0 0 1.5px #99BDFF}
+/* benefit list */
+.bl{display:flex;flex-direction:column;gap:8px;margin:16px 0 18px;font-size:14px}
+.bl div{display:flex;gap:8px;align-items:center}
+.tick{width:18px;height:18px;border-radius:50%;background:#EBF2FF;display:grid;place-items:center;flex:none}
+.tick svg{width:11px;height:11px;stroke:#005AFF;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.coin{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#7fe0ea,#00ACC1);flex:none}
+.fee{font-size:12.5px;color:#6b7a8a}
+</style><body><div class="grid">
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="cd" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></symbol>
+<symbol id="tk" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+<symbol id="sp" viewBox="0 0 24 24"><path d="M12 3l2.3 5.7L20 11l-5.7 2.3L12 19l-2.3-5.7L4 11l5.7-2.3z"/></symbol></defs></svg>
+
+<div class="panel"><div class="tag cur">Current</div><div class="note">Greyed tile, "Not set up" in black, small outlined button. Reads as unavailable, so bank-only users have no reason to look twice.</div>
+<div class="wrap"><div class="c grey"><div class="hd"><span class="ic"><svg><use href="#cd"/></svg></span>Card <span class="chip off">Not set up</span><span class="brands"><span class="vis">VISA</span><span class="mc"></span></span></div>
+<p class="body muted">Accept Visa and Mastercard on your invoices. 1.2% platform fee applies.</p>
+<span class="btn sec dim">Accept card payments →</span></div></div></div>
+
+<div class="panel"><div class="tag">1 · Status upgrade (smallest change)</div><div class="note">Same tile. Grey removed, "Not set up" becomes a blue "Available now" chip, the icon circle turns solid blue, and the copy sells the benefit with Pris's points line. Button stays secondary.</div>
+<div class="wrap"><div class="c"><div class="hd"><span class="ic hot"><svg><use href="#cd"/></svg></span>Card <span class="chip new">Available now</span><span class="brands"><span class="vis">VISA</span><span class="mc"></span></span></div>
+<p class="body">Accept Visa and Mastercard on invoices created in pay.com.au, and earn <b>PayRewards Points on every payment</b>. <span class="muted">1.2% platform fee applies.</span></p>
+<span class="btn sec">Accept card payments →</span></div></div></div>
+
+<div class="panel"><div class="tag">2 · Wraparound banner (Rachel's idea)</div><div class="note">The tile stays as it is, wrapped in a thin blue band that carries the proposition. Strong eye-catcher without a louder button. The band disappears once card is on, so the tile returns to the standard pair.</div>
+<div class="wrap"><div class="wb"><div class="strip"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><use href="#sp"/></svg>New · Give your customers more ways to pay</div>
+<div class="c"><div class="hd"><span class="ic"><svg><use href="#cd"/></svg></span>Card <span class="chip new">Available now</span><span class="brands"><span class="vis">VISA</span><span class="mc"></span></span></div>
+<p class="body">Accept Visa and Mastercard on invoices created in pay.com.au, and earn <b>PayRewards Points on every payment</b>. <span class="muted">1.2% platform fee applies.</span></p>
+<span class="btn sec">Accept card payments →</span></div></div></div></div>
+
+<div class="panel"><div class="tag">3 · "New" tab and highlight ring</div><div class="note">A small tab sits on the top edge and a light blue ring outlines the tile. Lighter than the banner and takes no extra height, but carries less message, so the benefit has to live in the copy.</div>
+<div class="wrap"><div class="c ring"><span class="tab">New</span><div class="hd"><span class="ic"><svg><use href="#cd"/></svg></span>Card <span class="chip new">Available now</span><span class="brands"><span class="vis">VISA</span><span class="mc"></span></span></div>
+<p class="body">Give customers more ways to pay. Accept Visa and Mastercard on invoices created in pay.com.au, and earn <b>PayRewards Points on every payment</b>. <span class="muted">1.2% platform fee applies.</span></p>
+<span class="btn sec">Accept card payments →</span></div></div></div>
+
+<div class="panel"><div class="tag">4 · Benefit list</div><div class="note">Turns the paragraph into three scannable benefits, with the points line marked by a PayRewards coin. Most persuasive, but the tile gets taller than Bank transfer, so the row needs to stretch.</div>
+<div class="wrap"><div class="c"><div class="hd"><span class="ic"><svg><use href="#cd"/></svg></span>Card <span class="chip new">Available now</span><span class="brands"><span class="vis">VISA</span><span class="mc"></span></span></div>
+<div class="bl"><div><span class="tick"><svg><use href="#tk"/></svg></span>More ways for customers to pay you</div><div><span class="tick"><svg><use href="#tk"/></svg></span>Visa and Mastercard on invoices created in pay.com.au</div><div><span class="coin"></span>Earn <b>PayRewards Points</b> on every payment</div></div>
+<div style="display:flex;align-items:center;justify-content:space-between"><span class="btn sec">Accept card payments →</span><span class="fee">1.2% platform fee applies</span></div></div></div></div>
+</div></body>
