@@ -1,0 +1,61 @@
+<!doctype html><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,"Helvetica Neue",Arial,sans-serif;background:#e9eef6;color:#283E48;padding:32px;width:1500px}
+.panel{background:#F7F9FB;border-radius:20px;padding:22px 26px 26px;box-shadow:0 6px 24px rgba(15,40,90,.1);margin-bottom:24px}
+.tag{font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:#005AFF;margin-bottom:6px}.tag.cur{color:#8a6a1f}
+.note{font-size:13.5px;color:#526973;line-height:1.5;margin-bottom:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.c{background:#fff;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px;min-height:276px}
+.hd{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.ic{width:38px;height:38px;border-radius:50%;background:#CCDEFF;display:grid;place-items:center;flex:none}
+.ic svg{width:20px;height:20px;stroke:#005AFF;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chip{font-size:12px;font-weight:500;border-radius:999px;padding:2px 9px;border:1px solid}
+.ok{color:#0D7E51;border-color:#8fd9b5;background:#f1fbf6}.off{color:#526973;border-color:#cfd6dd;background:#f3f5f7}
+.facts{font-size:13.5px;color:#526973}
+.facts b{color:#283E48;font-weight:600}
+.dot{margin:0 6px;color:#b4bec8}
+.foot{display:flex;align-items:center;gap:16px;margin-top:auto}
+.btn{font-weight:700;font-size:14px;border-radius:8px;padding:9px 14px;white-space:nowrap}
+.sec{border:1.5px solid #005AFF;color:#005AFF}.pri{background:#005AFF;color:#fff}.lnk{color:#005AFF;font-weight:700;font-size:14px}
+.sp{flex:1}
+.stage{height:120px;border-radius:12px;background:#EBF2FF;position:relative;overflow:hidden}
+.stage.q{background:#F3F7FD}
+.pocket{position:absolute;left:0;right:0;bottom:0;height:58px;background:linear-gradient(#dfe8f8,#cfdcf3);border-top:1px solid #b9cbee;border-radius:50% 50% 0 0/26px 26px 0 0}
+.q .pocket{background:linear-gradient(#e8eef8,#dde6f4);border-top-color:#cfdbef}
+.card{position:absolute;left:50%;top:8px;width:176px;height:108px;margin-left:-88px;border-radius:12px;padding:12px;color:#fff;transform:rotate(4deg);box-shadow:0 10px 24px rgba(0,40,120,.3)}
+.blue{background:linear-gradient(135deg,#0B1F4D,#005AFF)}
+.pale{background:linear-gradient(135deg,#9DB9EE,#C9DAF8);box-shadow:0 8px 18px rgba(0,40,120,.12);color:#1f3b73}
+.chipx{width:24px;height:17px;border-radius:4px;background:linear-gradient(135deg,#f3d27a,#c9a14a)}
+.num{font-size:11px;letter-spacing:1.5px;margin-top:22px;opacity:.85}
+.payid{font-weight:800;font-size:15px;letter-spacing:.3px}
+.payid span{display:inline-block;background:#1f3b73;color:#fff;border-radius:4px;padding:0 4px;margin-left:2px}
+.bank{position:absolute;left:50%;top:12px;margin-left:-60px;width:120px;height:80px}
+.bank svg{width:120px;height:80px}
+.vis{font-weight:900;font-style:italic;color:#1a1f71;font-size:16px}
+.mc{display:inline-block;position:relative;width:26px;height:16px;vertical-align:middle}.mc:before,.mc:after{content:"";position:absolute;top:0;width:16px;height:16px;border-radius:50%}.mc:before{left:0;background:#EB001B}.mc:after{left:10px;background:#F79E1B;opacity:.9}
+</style><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="bk" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/></symbol>
+<symbol id="cd" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></symbol></defs></svg>
+
+<!-- reusable card tile -->
+<script>
+const CARD=`<div class="c"><div class="hd"><span class="ic"><svg><use href="#cd"/></svg></span>Card <span class="chip off">Not set up</span></div>
+<div class="stage"><div class="card blue"><div class="chipx"></div><div class="num">•••• •••• •••• 4242</div></div><div class="pocket"></div></div>
+<div class="foot"><span class="vis">VISA</span><span class="mc"></span><span class="facts">1.2% platform fee</span><span class="sp"></span><span class="btn pri">Accept card payments</span></div></div>`;
+const FACTS=`<div class="facts"><b>PayID</b><span class="dot">·</span>No platform fee<span class="dot">·</span>Same day if received by 1:30pm AET</div>`;
+const HEAD=`<div class="hd"><span class="ic"><svg><use href="#bk"/></svg></span>Bank transfer <span class="chip ok">Active</span></div>`;
+const FOOT=`<div class="foot"><span class="btn sec">Copy payment details link</span><span class="lnk">Add to your invoices →</span></div>`;
+const opts=[
+ ['cur','Current','Two icon marks in the body (PayID logo, lightning bolt), two bold titles plus two captions, two equal-weight actions. Six things compete before the user reaches a button.',
+  `<div class="c">${HEAD}<div style="display:flex;justify-content:space-between;font-size:13px"><div><b style="display:block">▣ PayID available</b><span style="color:#6b7a8a">No platform fee</span></div><div><b style="display:block">⚡ Same day settlement</b><span style="color:#6b7a8a">If received by 1:30pm AET</span></div></div><div class="foot" style="margin-top:8px"><span class="btn sec">Copy payment details link</span><span class="lnk">Add to your invoices →</span></div></div>`],
+ ['','1 · Simplified, no illustration','The fastest fix. One header icon, one facts line, one button plus a text link. Clean, but next to an illustrated Card tile it looks emptier, so the pair feels unbalanced.',
+  `<div class="c">${HEAD}${FACTS}<div style="flex:1"></div>${FOOT}</div>`],
+ ['','2 · PayID card in the same pocket (recommended)','Mirrors the Card tile exactly: same stage and pocket, but the object is a pale PayID card with no chip, in a lighter tint. The pair reads as two equal methods, and Card stays the louder one because it is darker and has the solid button.',
+  `<div class="c">${HEAD}<div class="stage q"><div class="card pale"><div class="payid">Pay<span>ID</span></div><div class="num" style="opacity:.75;margin-top:30px">yourbusiness@payid</div></div><div class="pocket"></div></div>${FACTS}${FOOT}</div>`],
+ ['','3 · Outlined bank building','A line-drawn bank building in the same pale blue stage. Quieter than the PayID card, but it doesn\'t share the pocket motif, so the two tiles look less like a set.',
+  `<div class="c">${HEAD}<div class="stage q"><div class="bank"><svg viewBox="0 0 120 80" fill="none" stroke="#7FA3E6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30L60 6l50 24M18 30v38M38 30v38M60 30v38M82 30v38M102 30v38M8 72h104"/><circle cx="60" cy="20" r="4" fill="#B9CFF5"/></svg></div></div>${FACTS}${FOOT}</div>`],
+];
+for(const [c,t,n,b] of opts){document.write(`<div class="panel"><div class="tag ${c}">${t}</div><div class="note">${n}</div><div class="row">${b}${CARD}</div></div>`);}
+</script>
+</body>
