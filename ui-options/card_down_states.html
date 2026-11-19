@@ -1,0 +1,108 @@
+<!doctype html><meta charset="utf-8"><style>
+:root{--ink:#283E48;--mut:#526973;--blue:#005AFF;--blue-d:#0047CC;--ring:#CCDEFF;--grn:#0B6B3A;--grn-b:#7CCB9C;--grn-t:#F0FAF4;--amb:#7A4F00;--amb-b:#E8C168;--amb-t:#FFF8E6;--red:#B42318;--red-b:#F2A39B;--red-t:#FEF3F2;--bl-b:#99BDFF;--bl-t:#F3F7FF}
+*{box-sizing:border-box;margin:0}
+body{font-family:Satoshi,Inter,"Helvetica Neue",Arial,sans-serif;background:#E9EEF5;color:var(--ink);padding:32px;width:1240px}
+h1{font-size:24px}.sub{font-size:14.5px;color:var(--mut);line-height:1.5;margin:6px 0 22px;max-width:860px}
+.cap{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d);margin:26px 0 8px}
+.frame{background:#F7F9FB;border-radius:16px;padding:18px 24px 24px;margin-bottom:14px}
+.frame h3{font-size:15px;margin-bottom:2px}.frame .n{font-size:13px;color:var(--mut);margin-bottom:14px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+.tile{background:#fff;border-radius:16px;padding:22px 24px 20px;display:flex;flex-direction:column;min-height:206px;box-shadow:0 1px 0 rgba(40,62,72,.04)}
+.band{border-radius:20px;background:var(--ring);border:2px solid var(--bl-b);padding:0 0 0}
+.band .lab{text-align:center;font-size:13px;font-weight:500;color:var(--ink);padding:7px 0 7px}
+.band .tile{border-radius:14px;margin:0 6px 6px;min-height:206px}
+.hd{display:flex;align-items:center;gap:12px}
+.ic{width:44px;height:44px;border-radius:50%;background:var(--ring);display:grid;place-items:center;flex:none}
+.ic svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nm{font-weight:700;font-size:17px}
+.pill{font-size:12.5px;font-weight:500;border-radius:999px;padding:2px 10px;border:1px solid;line-height:1.4}
+.p-act{color:var(--grn);border-color:var(--grn-b);background:var(--grn-t)}
+.p-avail{color:var(--blue-d);border-color:var(--bl-b);background:var(--bl-t)}
+.p-pend{color:var(--amb);border-color:var(--amb-b);background:var(--amb-t)}
+.p-warn{color:var(--red);border-color:var(--red-b);background:var(--red-t)}
+.logo{margin-left:auto;display:flex;align-items:center;gap:6px}
+.visa{font-weight:900;font-style:italic;color:#1a1f71;font-size:17px}
+.mc{display:inline-block;position:relative;width:28px;height:18px}.mc:before,.mc:after{content:"";position:absolute;top:0;width:18px;height:18px;border-radius:50%}.mc:before{left:0;background:#EB001B}.mc:after{left:10px;background:#F79E1B;opacity:.9}
+.pid{font-weight:700;font-size:14px;display:flex;align-items:center;gap:2px}.pid b{background:#111;color:#fff;border-radius:4px;padding:1px 5px;font-size:13px}
+.facts{margin:20px 0 18px;display:flex;flex-direction:column;gap:12px;font-size:14.5px;line-height:1.4;color:var(--mut)}
+.facts b{color:var(--ink);font-weight:600}
+.foot{margin-top:auto;display:flex;align-items:center;gap:18px}
+.btn{font:600 14.5px/1 Satoshi,Inter,Arial,sans-serif;border:1.5px solid var(--blue);color:var(--blue-d);background:#fff;border-radius:8px;padding:11px 14px;white-space:nowrap}
+.btn.pri{background:var(--blue);color:#fff}
+.lnk{font-weight:600;font-size:14.5px;color:var(--blue-d);display:inline-flex;gap:8px;align-items:center}
+.fine{font-size:14px;color:var(--mut)}
+.bl{margin:20px 0 18px;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--mut)}
+.bl b{color:var(--ink);font-weight:600}
+.cmp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.why{font-size:13.5px;line-height:1.5;color:var(--mut)}
+.why b{color:var(--ink)}
+.tag{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.ok{color:var(--grn)}.no{color:var(--red)}
+
+.alert{border:1px solid #F2A39B;background:#FEF3F2;border-radius:12px;padding:14px 16px;margin-top:18px;position:relative}
+.alert .t{display:flex;gap:10px;align-items:center;font-weight:700;color:#B42318;font-size:17px}
+.alert .t i{width:22px;height:22px;border-radius:50%;background:#D92D20;color:#fff;font-style:normal;font-size:14px;display:grid;place-items:center}
+.alert .d{font-size:14.5px;margin:4px 0 0 32px;color:#283E48}
+.alert .r{text-align:right;font-weight:700;color:#0047CC;font-size:14px;margin-top:2px}
+.err{color:#B42318;font-weight:600}
+.errline{display:flex;gap:8px;align-items:flex-start}
+.errline svg{width:18px;height:18px;flex:none;margin-top:1px;stroke:#B42318;fill:none;stroke-width:2;stroke-linecap:round}
+.redring{box-shadow:inset 0 0 0 1.5px #F2A39B}
+.tag.cur{color:#8a6a1f}
+
+.p-down{color:#7A4F00;border-color:#E8C168;background:#FFF8E6}
+.warnic svg{stroke:#7A4F00}
+.lead-amb{color:#7A4F00;font-weight:600}
+.banner{display:flex;gap:12px;align-items:center;background:#FEF3F2;border:1px solid #F2A39B;border-radius:12px;padding:14px 18px;margin-bottom:14px;font-size:14.5px}
+.banner b{color:#B42318}.banner .btn{margin-left:auto}
+.payer{background:#fff;border-radius:16px;padding:22px;max-width:420px;box-shadow:0 1px 0 rgba(40,62,72,.04)}
+.payer .amt{font-size:28px;font-weight:700;margin:4px 0 14px}
+.opt{border:1.5px solid #CCDEFF;border-radius:12px;padding:12px 14px;display:flex;gap:12px;align-items:center;margin-bottom:10px;font-size:14.5px}
+.opt.sel{border-color:#005AFF;background:#F3F7FF}
+.opt.off{background:#F4F6F8;border-color:#DDE3E9;color:#6B7A85}
+.opt small{display:block;color:#526973;font-size:13px;margin-top:2px}
+.rad{width:18px;height:18px;border-radius:50%;border:2px solid #99BDFF;flex:none}.sel .rad{border-color:#005AFF;box-shadow:inset 0 0 0 4px #005AFF}.off .rad{border-color:#C3CCD4}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.45}
+.tbl th{text-align:left;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#526973;padding:6px 10px;border-bottom:1px solid #DDE3E9}
+.tbl td{padding:9px 10px;border-bottom:1px solid #EDF0F3;vertical-align:top}
+</style><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></symbol></defs></svg>
+<h1>Card payments down: what the payee and the payer see</h1>
+<p class="sub">Two different errors, two different colours. <b>Action needed</b> (red) means the payee must do something. <b>Unavailable</b> (amber) means the problem is on our side or our partner's, and the payee can only wait. Same tile skeleton for both. Mock-up only, Figma untouched.</p>
+
+<div class="cap">Payee: the tile</div>
+<div class="frame"><h3>1 · Card down, bank transfer still active</h3><div class="n">Amber pill, one inline lead, and the line that matters most: customers can still pay by bank. No alert card. Link goes to status updates, not a button, because there is nothing to fix.</div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-act">Active</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div><b>No platform fee</b></div><div><b>Same day settlement</b> if received by 1.30PM AEDT</div></div>
+<div class="foot"><span class="btn">Copy payment details link</span><span class="lnk">Add to your invoices →</span></div></div><div class="tile"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-down">Unavailable</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts"><div class="errline"><svg style="stroke:#7A4F00" viewBox="0 0 24 24"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg><div><span class="lead-amb">Card payments are unavailable right now</span><br><span style="color:#526973">Customers can still pay by bank transfer. We will email you when cards are back.</span></div></div></div><div class="foot"><span class="lnk">View status updates</span></div></div></div></div>
+<div class="frame"><h3>2 · Card down, no bank transfer set up</h3><div class="n">No fallback, so the impact is bigger. Same tile, but it offers the way out (set up bank transfer) as the one button, and a slim page-level alert sits above the tiles because invoices cannot be paid at all.</div><div class="banner"><b>Customers can't pay your invoices right now.</b> Card payments are unavailable and bank transfer isn't set up yet.<span class="btn">Accept bank transfer</span></div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-down">Unavailable</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts"><div class="errline"><svg style="stroke:#7A4F00" viewBox="0 0 24 24"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg><div><span class="lead-amb">Card payments are unavailable right now</span><br><span style="color:#526973">Customers can't pay your invoices at the moment. We will email you when cards are back.</span></div></div></div><div class="foot"><span class="btn pri">Accept bank transfer</span><span class="lnk">View status updates</span></div></div><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-avail">Available</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div><b>No platform fee</b></div><div><b>Same day settlement</b> if received by 1.30PM AEDT</div></div>
+<div class="foot"><span class="btn pri">Accept bank transfer</span></div></div></div></div>
+<div class="frame"><h3>3 · Recovery (shown once, then returns to Active)</h3><div class="n">Close the loop so payees are not left wondering. Also sent by email. Auto-clears after the next visit.</div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-act">Active</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div><b>No platform fee</b></div><div><b>Same day settlement</b> if received by 1.30PM AEDT</div></div>
+<div class="foot"><span class="btn">Copy payment details link</span><span class="lnk">Add to your invoices →</span></div></div><div class="tile"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-act">Active</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts"><div><b>Card payments are back.</b> Customers can pay by card again.</div><div style="font-size:13px">Invoices that were paid by bank transfer during this time are not affected.</div></div></div></div></div>
+
+<div class="cap">Payer: the invoice payment page</div>
+<div class="frame"><div class="n">Disable the card option and say why, in the customer's terms, rather than hiding it, so a customer who expects card is not confused. Never blame the payee.</div>
+<div class="two"><div><div class="tag ok">Bank transfer available</div><div class="payer"><div class="fine">Invoice INV-1042 from Harbour Cafe</div><div class="amt">$1,000.00</div>
+<div class="opt sel"><span class="rad"></span><div><b>Bank transfer</b><small>Pay from your banking app. No fee.</small></div></div>
+<div class="opt off"><span class="rad"></span><div><b>Card</b><small>Card payments are unavailable right now. Please pay by bank transfer or try again later.</small></div></div></div></div><div><div class="tag no">No bank transfer set up</div><div class="payer"><div class="fine">Invoice INV-1042 from Harbour Cafe</div><div class="amt">$1,000.00</div>
+<div class="opt off"><span class="rad"></span><div><b>Card</b><small>Card payments are unavailable right now. Please try again later or contact Harbour Cafe.</small></div></div></div></div></div></div>
+
+<div class="cap">What could come from the payers</div>
+<div class="frame"><table class="tbl"><tr><th>When</th><th>Payee sees</th><th>Customer sees</th><th>What could come back</th></tr>
+<tr><td>Card down, bank active</td><td>Amber "Unavailable" pill on the tile, email</td><td>Card option greyed with a reason. Bank option stays selected</td><td>Few queries. Some customers may wait and retry by card</td></tr>
+<tr><td>Card down, no bank</td><td>Same tile, plus a page-level alert</td><td>No way to pay on the invoice link</td><td>Customers contact the payee. Payments delayed. Highest risk</td></tr>
+<tr><td>Card back</td><td>Email, tile returns to Active</td><td>Card option live again</td><td>Customers who waited pay in a burst</td></tr></table></div>
+
+<div class="cap">Separate case: card setup needs the payee to act</div>
+<div class="frame"><h3>4 · Action needed, card</h3><div class="n">Red pill, same pattern as the bank error. Shown for contrast with the amber outage state.</div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-act">Active</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div><b>No platform fee</b></div><div><b>Same day settlement</b> if received by 1.30PM AEDT</div></div>
+<div class="foot"><span class="btn">Copy payment details link</span><span class="lnk">Add to your invoices →</span></div></div><div class="tile"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-warn">Action needed</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts"><div class="errline"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><div><span class="err">We couldn't verify your card details</span><br><span style="color:#526973">Update your business details so customers can pay by card.</span></div></div></div><div class="foot"><span class="btn pri">Continue setup</span></div></div></div></div>
+</body>
