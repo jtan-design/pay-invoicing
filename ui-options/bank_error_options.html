@@ -1,0 +1,83 @@
+<!doctype html><meta charset="utf-8"><style>
+:root{--ink:#283E48;--mut:#526973;--blue:#005AFF;--blue-d:#0047CC;--ring:#CCDEFF;--grn:#0B6B3A;--grn-b:#7CCB9C;--grn-t:#F0FAF4;--amb:#7A4F00;--amb-b:#E8C168;--amb-t:#FFF8E6;--red:#B42318;--red-b:#F2A39B;--red-t:#FEF3F2;--bl-b:#99BDFF;--bl-t:#F3F7FF}
+*{box-sizing:border-box;margin:0}
+body{font-family:Satoshi,Inter,"Helvetica Neue",Arial,sans-serif;background:#E9EEF5;color:var(--ink);padding:32px;width:1240px}
+h1{font-size:24px}.sub{font-size:14.5px;color:var(--mut);line-height:1.5;margin:6px 0 22px;max-width:860px}
+.cap{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d);margin:26px 0 8px}
+.frame{background:#F7F9FB;border-radius:16px;padding:18px 24px 24px;margin-bottom:14px}
+.frame h3{font-size:15px;margin-bottom:2px}.frame .n{font-size:13px;color:var(--mut);margin-bottom:14px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+.tile{background:#fff;border-radius:16px;padding:22px 24px 20px;display:flex;flex-direction:column;min-height:206px;box-shadow:0 1px 0 rgba(40,62,72,.04)}
+.band{border-radius:20px;background:var(--ring);border:2px solid var(--bl-b);padding:0 0 0}
+.band .lab{text-align:center;font-size:13px;font-weight:500;color:var(--ink);padding:7px 0 7px}
+.band .tile{border-radius:14px;margin:0 6px 6px;min-height:206px}
+.hd{display:flex;align-items:center;gap:12px}
+.ic{width:44px;height:44px;border-radius:50%;background:var(--ring);display:grid;place-items:center;flex:none}
+.ic svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nm{font-weight:700;font-size:17px}
+.pill{font-size:12.5px;font-weight:500;border-radius:999px;padding:2px 10px;border:1px solid;line-height:1.4}
+.p-act{color:var(--grn);border-color:var(--grn-b);background:var(--grn-t)}
+.p-avail{color:var(--blue-d);border-color:var(--bl-b);background:var(--bl-t)}
+.p-pend{color:var(--amb);border-color:var(--amb-b);background:var(--amb-t)}
+.p-warn{color:var(--red);border-color:var(--red-b);background:var(--red-t)}
+.logo{margin-left:auto;display:flex;align-items:center;gap:6px}
+.visa{font-weight:900;font-style:italic;color:#1a1f71;font-size:17px}
+.mc{display:inline-block;position:relative;width:28px;height:18px}.mc:before,.mc:after{content:"";position:absolute;top:0;width:18px;height:18px;border-radius:50%}.mc:before{left:0;background:#EB001B}.mc:after{left:10px;background:#F79E1B;opacity:.9}
+.pid{font-weight:700;font-size:14px;display:flex;align-items:center;gap:2px}.pid b{background:#111;color:#fff;border-radius:4px;padding:1px 5px;font-size:13px}
+.facts{margin:20px 0 18px;display:flex;flex-direction:column;gap:12px;font-size:14.5px;line-height:1.4;color:var(--mut)}
+.facts b{color:var(--ink);font-weight:600}
+.foot{margin-top:auto;display:flex;align-items:center;gap:18px}
+.btn{font:600 14.5px/1 Satoshi,Inter,Arial,sans-serif;border:1.5px solid var(--blue);color:var(--blue-d);background:#fff;border-radius:8px;padding:11px 14px;white-space:nowrap}
+.btn.pri{background:var(--blue);color:#fff}
+.lnk{font-weight:600;font-size:14.5px;color:var(--blue-d);display:inline-flex;gap:8px;align-items:center}
+.fine{font-size:14px;color:var(--mut)}
+.bl{margin:20px 0 18px;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--mut)}
+.bl b{color:var(--ink);font-weight:600}
+.cmp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.why{font-size:13.5px;line-height:1.5;color:var(--mut)}
+.why b{color:var(--ink)}
+.tag{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.ok{color:var(--grn)}.no{color:var(--red)}
+
+.alert{border:1px solid #F2A39B;background:#FEF3F2;border-radius:12px;padding:14px 16px;margin-top:18px;position:relative}
+.alert .t{display:flex;gap:10px;align-items:center;font-weight:700;color:#B42318;font-size:17px}
+.alert .t i{width:22px;height:22px;border-radius:50%;background:#D92D20;color:#fff;font-style:normal;font-size:14px;display:grid;place-items:center}
+.alert .d{font-size:14.5px;margin:4px 0 0 32px;color:#283E48}
+.alert .r{text-align:right;font-weight:700;color:#0047CC;font-size:14px;margin-top:2px}
+.err{color:#B42318;font-weight:600}
+.errline{display:flex;gap:8px;align-items:flex-start}
+.errline svg{width:18px;height:18px;flex:none;margin-top:1px;stroke:#B42318;fill:none;stroke-width:2;stroke-linecap:round}
+.redring{box-shadow:inset 0 0 0 1.5px #F2A39B}
+.tag.cur{color:#8a6a1f}
+</style><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></symbol></defs></svg>
+<h1>Bank transfer error: pill plus inline text</h1>
+<p class="sub">Recommendation: the tile keeps its normal header, the "Action needed" pill carries the status, and the problem is written inline in the same two-line slot every other state uses. The alert card inside the tile goes. Mock-up only, Figma untouched.</p>
+<div class="cap">Why the current one is off</div>
+<div class="frame"><div class="n" style="margin:0;font-size:14px;line-height:1.6;color:#283E48">
+1. <b>Card in a card.</b> A bordered, tinted alert sits inside a white tile. Same problem we removed from the card banner.<br>
+2. <b>The tile loses its identity.</b> No icon circle, no status pill, no PayID logo, so it no longer matches Card beside it.<br>
+3. <b>Red appears three times</b> (border, icon, title) and the only action, "Retry", is a small text link at the far corner.<br>
+4. <b>Wrong tool for the scale.</b> Banners and alerts are for page-level or blocking problems. This is one method's status, and that is what the pill is for.</div></div>
+<div class="cap">Options</div>
+<div class="frame"><h3>Current</h3><div class="n">Alert card nested in the tile.</div><div class="pair" style="align-items:stretch"><div class="tile"><div class="nm" style="font-size:17px">Bank transfer</div><div class="alert"><div class="t"><i>!</i>We couldn't set up your PayID</div><div class="d">Something went wrong while checking this PayID. Please retry.</div><div class="r">Retry</div></div></div><div class="tile"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-act">Active</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts" style="gap:10px"><div><b>Visa and Mastercard</b> on invoices you create in pay.com.au</div><div><b>1.2% platform fee</b> applies</div><div><b>Earn PayRewards Points</b> on every payment</div></div></div></div></div>
+<div class="frame"><h3>A · Pill, inline text, Retry button (recommended)</h3><div class="n">Same skeleton as every other state. Red only on the pill and the lead line, with a small icon so the error is not colour alone. Retry becomes the one primary button in the footer.</div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-warn">Action needed</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div class="errline"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><div><span class="err">We couldn't set up your PayID</span><br><span style="color:#526973">Something went wrong while checking this PayID.</span></div></div></div>
+<div class="foot"><span class="btn pri">Retry</span></div></div><div class="tile"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-act">Active</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts" style="gap:10px"><div><b>Visa and Mastercard</b> on invoices you create in pay.com.au</div><div><b>1.2% platform fee</b> applies</div><div><b>Earn PayRewards Points</b> on every payment</div></div></div></div></div>
+<div class="frame"><h3>B · Same, plus a red tile outline</h3><div class="n">Louder. Use only if errors are being missed in testing. Costs the "tiles are equals" calm and adds a third place red appears.</div><div class="pair" style="align-items:stretch"><div class="tile redring"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-warn">Action needed</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div class="errline"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><div><span class="err">We couldn't set up your PayID</span><br><span style="color:#526973">Something went wrong while checking this PayID.</span></div></div></div>
+<div class="foot"><span class="btn pri">Retry</span></div></div><div class="tile"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-act">Active</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts" style="gap:10px"><div><b>Visa and Mastercard</b> on invoices you create in pay.com.au</div><div><b>1.2% platform fee</b> applies</div><div><b>Earn PayRewards Points</b> on every payment</div></div></div></div></div>
+<div class="frame"><h3>A2 · Same pattern for "needs your input"</h3><div class="n">For states the user can fix themselves rather than retry. Same layout, different words and button, so one component covers both.</div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-warn">Action needed</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div class="errline"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><div><span class="err">Your PayID needs one more step</span><br><span style="color:#526973">Confirm your business name so customers see the right payee.</span></div></div></div>
+<div class="foot"><span class="btn pri">Continue setup</span></div></div><div class="tile"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-act">Active</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts" style="gap:10px"><div><b>Visa and Mastercard</b> on invoices you create in pay.com.au</div><div><b>1.2% platform fee</b> applies</div><div><b>Earn PayRewards Points</b> on every payment</div></div></div></div></div>
+<div class="cap">Rules for the component</div>
+<div class="frame"><div class="n" style="margin:0;font-size:14px;line-height:1.6;color:#283E48">
+<b>Pill</b> says the state in two words. <b>Lead line</b> says what is wrong in plain language. <b>Second line</b> says why or what to do, never "Please retry" when the button already says Retry. <b>Button</b> is the single fix action, primary because it is the only thing to do on that tile. <b>Page-level alert</b> only when both methods are blocked, or the problem stops an invoice being sent.<br><br>
+<b>Copy:</b> "We couldn't set up your PayID" is good, keep it. The second line drops "Please retry." because the button covers it.</div></div>
+</body>
