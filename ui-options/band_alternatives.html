@@ -1,0 +1,91 @@
+<!doctype html><meta charset="utf-8"><style>
+:root{--ink:#283E48;--mut:#526973;--blue:#005AFF;--blue-d:#0047CC;--ring:#CCDEFF;--grn:#0B6B3A;--grn-b:#7CCB9C;--grn-t:#F0FAF4;--amb:#7A4F00;--amb-b:#E8C168;--amb-t:#FFF8E6;--red:#B42318;--red-b:#F2A39B;--red-t:#FEF3F2;--bl-b:#99BDFF;--bl-t:#F3F7FF}
+*{box-sizing:border-box;margin:0}
+body{font-family:Satoshi,Inter,"Helvetica Neue",Arial,sans-serif;background:#E9EEF5;color:var(--ink);padding:32px;width:1240px}
+h1{font-size:24px}.sub{font-size:14.5px;color:var(--mut);line-height:1.5;margin:6px 0 22px;max-width:860px}
+.cap{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d);margin:26px 0 8px}
+.frame{background:#F7F9FB;border-radius:16px;padding:18px 24px 24px;margin-bottom:14px}
+.frame h3{font-size:15px;margin-bottom:2px}.frame .n{font-size:13px;color:var(--mut);margin-bottom:14px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+.tile{background:#fff;border-radius:16px;padding:22px 24px 20px;display:flex;flex-direction:column;min-height:206px;box-shadow:0 1px 0 rgba(40,62,72,.04)}
+.band{border-radius:20px;background:var(--ring);border:2px solid var(--bl-b);padding:0 0 0}
+.band .lab{text-align:center;font-size:13px;font-weight:500;color:var(--ink);padding:7px 0 7px}
+.band .tile{border-radius:14px;margin:0 6px 6px;min-height:206px}
+.hd{display:flex;align-items:center;gap:12px}
+.ic{width:44px;height:44px;border-radius:50%;background:var(--ring);display:grid;place-items:center;flex:none}
+.ic svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nm{font-weight:700;font-size:17px}
+.pill{font-size:12.5px;font-weight:500;border-radius:999px;padding:2px 10px;border:1px solid;line-height:1.4}
+.p-act{color:var(--grn);border-color:var(--grn-b);background:var(--grn-t)}
+.p-avail{color:var(--blue-d);border-color:var(--bl-b);background:var(--bl-t)}
+.p-pend{color:var(--amb);border-color:var(--amb-b);background:var(--amb-t)}
+.p-warn{color:var(--red);border-color:var(--red-b);background:var(--red-t)}
+.logo{margin-left:auto;display:flex;align-items:center;gap:6px}
+.visa{font-weight:900;font-style:italic;color:#1a1f71;font-size:17px}
+.mc{display:inline-block;position:relative;width:28px;height:18px}.mc:before,.mc:after{content:"";position:absolute;top:0;width:18px;height:18px;border-radius:50%}.mc:before{left:0;background:#EB001B}.mc:after{left:10px;background:#F79E1B;opacity:.9}
+.pid{font-weight:700;font-size:14px;display:flex;align-items:center;gap:2px}.pid b{background:#111;color:#fff;border-radius:4px;padding:1px 5px;font-size:13px}
+.facts{margin:20px 0 18px;display:flex;flex-direction:column;gap:12px;font-size:14.5px;line-height:1.4;color:var(--mut)}
+.facts b{color:var(--ink);font-weight:600}
+.foot{margin-top:auto;display:flex;align-items:center;gap:18px}
+.btn{font:600 14.5px/1 Satoshi,Inter,Arial,sans-serif;border:1.5px solid var(--blue);color:var(--blue-d);background:#fff;border-radius:8px;padding:11px 14px;white-space:nowrap}
+.btn.pri{background:var(--blue);color:#fff}
+.lnk{font-weight:600;font-size:14.5px;color:var(--blue-d);display:inline-flex;gap:8px;align-items:center}
+.fine{font-size:14px;color:var(--mut)}
+.bl{margin:20px 0 18px;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--mut)}
+.bl b{color:var(--ink);font-weight:600}
+.cmp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.why{font-size:13.5px;line-height:1.5;color:var(--mut)}
+.why b{color:var(--ink)}
+.tag{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.ok{color:var(--grn)}.no{color:var(--red)}
+
+.sel{border:1.5px solid #005AFF;background:#F3F7FF}
+.dash{border:1.5px dashed #9FB0BC;background:#fff}
+.inl{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#526973;border-bottom:1px solid #E3E8ED;margin:-4px 0 16px;padding-bottom:12px}
+.inl svg{width:16px;height:16px;stroke:#0047CC;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.alert{display:flex;gap:12px;align-items:center;background:#F3F7FF;border:1px solid #99BDFF;border-radius:12px;padding:12px 16px;margin-bottom:14px;font-size:14.5px}
+.alert b{font-weight:600}.alert .lnk{margin-left:auto}
+.verdict{font-size:13px;line-height:1.5;color:#526973;margin-top:10px}
+.verdict b{color:#283E48}
+.hl{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.g{color:#0B6B3A}.r{color:#B42318}
+</style><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></symbol></defs></svg>
+<h1>Replacing the blue band on "Accept card payments" and "Accept bank transfer"</h1>
+<p class="sub">Feedback: the blue band reads as a selected state, even in a lighter blue. That is a fair read. Across the product, a blue outline with a tinted fill means selected (your Accepting payment method cards use exactly that). So the band borrows a meaning it should not have. Options below. Mock-up only.</p>
+
+<div class="frame"><div class="hl r">Why it reads as selected</div>
+<div class="pair" style="align-items:stretch">
+<div class="tile sel" style="min-height:120px"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="logo" style="font-size:13px;color:#005AFF;font-weight:600">Selected card on Accepting payment method</span></div></div>
+<div class="tile" style="min-height:120px;border:2px solid #99BDFF;background:#CCDEFF;padding:6px"><div style="text-align:center;font-size:13px;padding:2px 0 6px">Give customers more ways to pay</div><div style="background:#fff;border-radius:12px;padding:14px;flex:1"><b>Card</b> tile inside the band</div></div>
+</div>
+<div class="verdict">Same blue edge, same tinted surround. Also the heading directly above already says "Give customers more ways to pay", so the band repeats the message and adds the wrong signal.</div></div>
+
+<div class="frame"><div class="hl g">Recommended</div><h3>A · No band. Let the pill and the button do the work</h3><div class="n">Tile is identical to an active one. "Available" pill says it can be turned on, the outlined button says how. The section heading above carries the "more ways to pay" message.</div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-act">Active</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div><b>No platform fee</b></div><div><b>Same day settlement</b> if received by 1.30PM AEDT</div></div>
+<div class="foot"><span class="btn">Copy payment details link</span><span class="lnk">Add to your invoices →</span></div></div><div class="tile "><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-avail">Available</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts"><div><b>Visa and Mastercard</b> on invoices you create in pay.com.au</div><div><b>Earn PayRewards Points</b> on every payment</div></div>
+<div class="foot"><span class="btn">Accept card payments</span><span class="fine">1.2% platform fee applies</span></div></div></div><div class="verdict"><b>Why:</b> removes the false selected signal and the repeated line, keeps both tiles as equals, and is the least new UI. The "Available" pill is already the state signal we agreed on. <b>Trade-off:</b> the least eye-catching. If testing shows card is missed, step up to C.</div></div>
+
+<div class="frame"><div class="hl "></div><h3>B · Dashed outline for "not set up yet"</h3><div class="n">A dashed, neutral outline is a common "add something here" pattern and cannot be mistaken for the solid blue selected state.</div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-act">Active</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div><b>No platform fee</b></div><div><b>Same day settlement</b> if received by 1.30PM AEDT</div></div>
+<div class="foot"><span class="btn">Copy payment details link</span><span class="lnk">Add to your invoices →</span></div></div><div class="tile dash"><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-avail">Available</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts"><div><b>Visa and Mastercard</b> on invoices you create in pay.com.au</div><div><b>Earn PayRewards Points</b> on every payment</div></div>
+<div class="foot"><span class="btn">Accept card payments</span><span class="fine">1.2% platform fee applies</span></div></div></div><div class="verdict"><b>Why:</b> clearly different from selected, still draws the eye a little. <b>Trade-off:</b> dashed borders can read as empty or disabled, and it is a new treatment we would need to add to the system.</div></div>
+
+<div class="frame"><div class="hl "></div><h3>C · One quiet line inside the tile</h3><div class="n">A single neutral line at the top of the tile with a small spark icon, separated by a divider. No coloured wrapper, no extra card edge.</div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-act">Active</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div><b>No platform fee</b></div><div><b>Same day settlement</b> if received by 1.30PM AEDT</div></div>
+<div class="foot"><span class="btn">Copy payment details link</span><span class="lnk">Add to your invoices →</span></div></div><div class="tile "><div class="inl"><svg viewBox="0 0 24 24"><path d="M12 3l2.3 5.7L20 11l-5.7 2.3L12 19l-2.3-5.7L4 11l5.7-2.3z"/></svg>Give customers more ways to pay</div><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-avail">Available</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts"><div><b>Visa and Mastercard</b> on invoices you create in pay.com.au</div><div><b>Earn PayRewards Points</b> on every payment</div></div>
+<div class="foot"><span class="btn">Accept card payments</span><span class="fine">1.2% platform fee applies</span></div></div></div><div class="verdict"><b>Why:</b> keeps the message next to the action without a wrapper, uses text and icon the system already has. <b>Trade-off:</b> makes the Card tile slightly taller, so the pair needs to stretch to equal height.</div></div>
+
+<div class="frame"><div class="hl "></div><h3>D · Existing info alert above the tiles</h3><div class="n">Uses the Info alert component already in Pay Design System V2, once for the pair, with the action as a link.</div><div class="alert"><b>Give customers more ways to pay.</b> Turn on card payments and earn PayRewards Points on every payment.<span class="lnk">Accept card payments →</span></div><div class="pair" style="align-items:stretch"><div class="tile"><div class="hd"><span class="ic"><svg><use href="#bank"/></svg></span><span class="nm">Bank transfer</span><span class="pill p-act">Active</span><span class="logo pid">Pay<b>iD</b></span></div>
+<div class="facts"><div><b>No platform fee</b></div><div><b>Same day settlement</b> if received by 1.30PM AEDT</div></div>
+<div class="foot"><span class="btn">Copy payment details link</span><span class="lnk">Add to your invoices →</span></div></div><div class="tile "><div class="hd"><span class="ic"><svg><use href="#card"/></svg></span><span class="nm">Card</span><span class="pill p-avail">Available</span><span class="logo"><span class="visa">VISA</span><span class="mc"></span></span></div>
+<div class="facts"><div><b>Visa and Mastercard</b> on invoices you create in pay.com.au</div><div><b>Earn PayRewards Points</b> on every payment</div></div>
+<div class="foot"><span class="btn">Accept card payments</span><span class="fine">1.2% platform fee applies</span></div></div></div><div class="verdict"><b>Why:</b> an existing component with an established "information" meaning. <b>Trade-off:</b> competes with the hero banner above it, and it duplicates the button inside the tile, so there would be two actions for one thing.</div></div>
+
+<div class="frame"><div class="hl">Recommendation</div><div class="verdict" style="font-size:14px;color:#283E48"><b>Go with A, keep C in reserve.</b> The heading already says "Give customers more ways to pay", so the band is redundant as well as misleading. Start with the tile exactly like the active ones plus the "Available" pill. If card activation is low in testing, add the quiet line from C rather than bringing back a coloured wrapper. This also applies to the Bank tile when card is the active method, and to E4 in the new turn-off flow.</div></div>
+</body>
